@@ -1,0 +1,12 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: another
+  image: alpine
+  commands:
+  - echo "Hello"
+  - sleep 2
+  - echo "Done"
