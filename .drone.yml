@@ -11,7 +11,7 @@ steps:
 - name: another
   image: alpine
   commands:
-  - echo "Hello"
+  - echo "Hellos"
   - sleep 2
   - echo "Done"
 
