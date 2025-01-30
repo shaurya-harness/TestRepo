@@ -5,7 +5,7 @@ name: default
 
 platform:
   os: linux
-  arch: arm64
+  arch: amd64
   
 steps:
 - name: another
@@ -14,6 +14,12 @@ steps:
   - echo "Hellos"
   - sleep 2
   - echo "Done"
+
+trigger:
+  ref:
+    - refs/heads/main
+    - refs/tags/**
+    - refs/pull/**   
 
 ---
 kind: signature
