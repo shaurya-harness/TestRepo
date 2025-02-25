@@ -1,3 +1,32 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+platform:
+  os: linux
+  arch: amd64
+  
+steps:
+- name: another
+  image: alpine
+  commands:
+  - echo "Hellos"
+  - sleep 2
+  - echo "Done"
+
+trigger:
+  ref:
+    - refs/heads/main
+    - refs/tags/**
+    - refs/pull/**   
+
+---
+kind: signature
+hmac: F10E2821BBBEA527EA02200352313BC059445190
+
+
+
 # ---
 # kind: pipeline
 # name: test secret kubernetes
@@ -35,31 +64,3 @@
 #   event:
 #   - push
 # type: kubernetes
-
-
----
-kind: pipeline
-type: docker
-name: default
-
-platform:
-  os: linux
-  arch: amd64
-  
-steps:
-- name: another
-  image: alpine
-  commands:
-  - echo "Hellos"
-  - sleep 2
-  - echo "Done"
-
-trigger:
-  ref:
-    - refs/heads/main
-    - refs/tags/**
-    - refs/pull/**   
-
----
-kind: signature
-hmac: F10E2821BBBEA527EA02200352313BC059445190
