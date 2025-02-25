@@ -1,65 +1,65 @@
----
-kind: pipeline
-name: test secret kubernetes
-
-platform:
-  os: linux
-  arch: arm64
-
-steps:
-- commands:
-  - echo 12345643
-  environment:
-    SAMPLE_KEY:
-      from_secret: FOO
-  image: alpine
-  name: Install Dependencies
-- commands:
-  - echo $${SAMPLE_KEY}
-  environment:
-    SAMPLE_KEY:
-      from_secret: FOO
-  image: alpine
-  name: Run Linting
-- commands:
-  - echo $${SAMPLE_KEY}
-  environment:
-    SAMPLE_KEY:
-      from_secret: FOO
-  image: alpine
-  name: Run Unit Tests
-trigger:
-  branch:
-    exclude:
-    - main
-  event:
-  - push
-type: kubernetes
-
-
 # ---
 # kind: pipeline
-# type: docker
-# name: default
+# name: test secret kubernetes
 
 # platform:
 #   os: linux
-#   arch: amd64
-  
+#   arch: arm64
+
 # steps:
-# - name: another
+# - commands:
+#   - echo 12345643
+#   environment:
+#     SAMPLE_KEY:
+#       from_secret: FOO
 #   image: alpine
-#   commands:
-#   - echo "Hellos"
-#   - sleep 2
-#   - echo "Done"
-
+#   name: Install Dependencies
+# - commands:
+#   - echo $${SAMPLE_KEY}
+#   environment:
+#     SAMPLE_KEY:
+#       from_secret: FOO
+#   image: alpine
+#   name: Run Linting
+# - commands:
+#   - echo $${SAMPLE_KEY}
+#   environment:
+#     SAMPLE_KEY:
+#       from_secret: FOO
+#   image: alpine
+#   name: Run Unit Tests
 # trigger:
-#   ref:
-#     - refs/heads/main
-#     - refs/tags/**
-#     - refs/pull/**   
+#   branch:
+#     exclude:
+#     - main
+#   event:
+#   - push
+# type: kubernetes
 
-# ---
-# kind: signature
-# hmac: F10E2821BBBEA527EA02200352313BC059445190
+
+---
+kind: pipeline
+type: docker
+name: default
+
+platform:
+  os: linux
+  arch: amd64
+  
+steps:
+- name: another
+  image: alpine
+  commands:
+  - echo "Hellos"
+  - sleep 2
+  - echo "Done"
+
+trigger:
+  ref:
+    - refs/heads/main
+    - refs/tags/**
+    - refs/pull/**   
+
+---
+kind: signature
+hmac: F10E2821BBBEA527EA02200352313BC059445190
