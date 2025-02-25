@@ -35,4 +35,4 @@ pipeline:
                     connectorRef: ShobhitDockerConnector
                     image: alpine
                     shell: Sh
-                    command: echo "shobhit"
+                    command: echo "shobhit "
