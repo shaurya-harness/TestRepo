@@ -1,0 +1,38 @@
+pipeline:
+  name: pipeCond2
+  identifier: pipeCond2
+  tags: {}
+  projectIdentifier: Unified
+  orgIdentifier: default
+  stages:
+    - stage:
+        name: ci
+        identifier: ci
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: false
+          caching:
+            enabled: false
+            paths: []
+          buildIntelligence:
+            enabled: false
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: ShobhitK8
+              namespace: harness-delegate-ng
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    connectorRef: ShobhitDockerConnector
+                    image: alpine
+                    shell: Sh
+                    command: echo "shobhit"
