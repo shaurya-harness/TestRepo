@@ -2,6 +2,7 @@ pipeline:
   clone:
     disabled: true
   "on":
+    - push
     - pull_request
   inputs:
     branch:
