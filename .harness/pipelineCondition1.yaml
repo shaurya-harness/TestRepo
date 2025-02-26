@@ -18,6 +18,7 @@ pipeline:
       steps:
         - run:
             script: |-
+              echo "hello world"
               echo <+matrix.version>
               echo <+pipeline.name>
               echo <+trigger.branch>
