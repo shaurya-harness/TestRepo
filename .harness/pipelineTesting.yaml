@@ -4,7 +4,7 @@ pipeline:
   "on":
     push:
       branches:
-        - main
+        - pipelineTest
     pull_request:
       branches:
         - main
