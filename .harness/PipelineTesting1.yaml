@@ -7,7 +7,7 @@ pipeline:
         - main
     pull_request:
       branches:
-        - pipelineTest1
+        - pipelineTest2
   inputs:
     branch:
       type: string
