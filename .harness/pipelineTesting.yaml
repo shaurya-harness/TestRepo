@@ -22,7 +22,7 @@ pipeline:
       steps:
         - run:
             script: |-
-              echo "hello world, my name is shobhit !"
+              echo "hello world, my name is shobhit!"
               echo <+matrix.version>
               echo <+pipeline.name>
               echo <+trigger.branch>
