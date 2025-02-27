@@ -7,7 +7,7 @@ pipeline:
         - pipelineTest
     pull_request:
       branches:
-        - main
+        - develop
   inputs:
     branch:
       type: string
@@ -22,7 +22,7 @@ pipeline:
       steps:
         - run:
             script: |-
-              echo "hello world "
+              echo "hello world, my name is shobhit"
               echo <+matrix.version>
               echo <+pipeline.name>
               echo <+trigger.branch>
