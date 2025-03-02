@@ -1,0 +1,30 @@
+pipeline:
+  clone:
+    disabled: true
+  "on":
+    - push
+    - pull_request
+  inputs:
+    branch:
+      type: string
+      value: main
+  stages:
+    - strategy:
+        matrix:
+          go:
+            - latest
+            - "1.19"
+      name: stage
+      steps:
+        - run:
+            script: |-
+              echo <+matrix.version>
+              echo <+pipeline.name>
+              echo <+trigger.branch>
+              echo <+trigger.prNumber>
+              echo <+pipeline.branch>
+              echo <+inputs.branch>
+              echo ${{ matrix.version }}
+              echo ${{ pipeline.stages.stage_1_0.steps.run_1_0.isBackground }}
+              echo $TEST
+              echo "foo=bar" >> $HARNESS_OUTPUT_FILE
