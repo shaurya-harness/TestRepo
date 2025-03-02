@@ -1,0 +1,16 @@
+pipeline:
+  "on":
+    push:
+      branches:
+        - develop
+        - main
+        - master
+    pull_request:
+      branches:
+        - main
+  clone:
+    disabled: true
+  stages:
+    - steps:
+        - run:
+            script: echo "hello from main branch with free push-pull"
