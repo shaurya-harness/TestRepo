@@ -32,3 +32,4 @@ pipeline:
               echo ${{ pipeline.stages.stage_1_0.steps.run_1_0.isBackground }}
               echo $TEST
               echo "foo=bar" >> $HARNESS_OUTPUT_FILE
+              echo "hello from main branch again"
