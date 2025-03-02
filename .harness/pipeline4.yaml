@@ -1,0 +1,12 @@
+pipeline:
+  "on":
+    push:
+      branches:
+        - main
+    pull_request:
+      branches:
+        - master
+  stages:
+    - steps:
+        - run:
+            script: echo "from main branch"
