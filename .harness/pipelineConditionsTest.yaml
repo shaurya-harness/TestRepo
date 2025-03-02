@@ -2,12 +2,12 @@ pipeline:
   clone:
     disabled: true
   "on":
-      push:
-        - branches:
-            - develop
-      pull_request:
-        - branches:
-             - main
+    push:
+      branches:
+        - develop
+    pull_request:
+      branches:
+        - main
   inputs:
     branch:
       type: string
