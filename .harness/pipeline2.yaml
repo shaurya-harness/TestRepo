@@ -1,0 +1,8 @@
+pipeline:
+  "on":
+    - push
+    - pull_request
+  stages:
+    - steps:
+        - run:
+            script: go build
