@@ -5,4 +5,4 @@ pipeline:
   stages:
     - steps:
         - run:
-            script: go build
+            script: echo hello
