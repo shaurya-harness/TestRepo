@@ -13,7 +13,7 @@ pipeline:
         matrix:
           go:
             - latest
-            - "1.19"
+            - "1.20"
       name: stage
       steps:
         - run:
