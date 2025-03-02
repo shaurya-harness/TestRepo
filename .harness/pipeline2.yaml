@@ -2,6 +2,8 @@ pipeline:
   "on":
     - push
     - pull_request
+  clone:
+    disabled: true
   stages:
     - steps:
         - run:
