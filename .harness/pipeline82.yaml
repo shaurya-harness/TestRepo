@@ -2,7 +2,7 @@ pipeline:
   "on":
     push:
       branches:
-        - pipeline-6
+        - pipeline-8
     pull_request:
       branches:
         - main
