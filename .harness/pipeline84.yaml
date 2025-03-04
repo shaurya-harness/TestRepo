@@ -1,0 +1,9 @@
+pipeline:
+  "on":
+    - pull_request
+  clone:
+    disabled: true
+  stages:
+    - steps:
+        - run:
+            script: echo "hello from branch pipeline-8-4. Sync"
