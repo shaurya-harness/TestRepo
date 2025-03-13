@@ -5,7 +5,7 @@ name: default
 
 platform:
   os: linux
-  arch: amd64
+  arch: arm64
   
 steps:
 - name: another
@@ -14,53 +14,3 @@ steps:
   - echo "Hellos"
   - sleep 2
   - echo "Done"
-
-trigger:
-  ref:
-    - refs/heads/main
-    - refs/tags/**
-    - refs/pull/**   
-
----
-kind: signature
-hmac: F10E2821BBBEA527EA02200352313BC059445190
-
-
-
-# ---
-# kind: pipeline
-# name: test secret kubernetes
-
-# platform:
-#   os: linux
-#   arch: arm64
-
-# steps:
-# - commands:
-#   - echo 12345643
-#   environment:
-#     SAMPLE_KEY:
-#       from_secret: FOO
-#   image: alpine
-#   name: Install Dependencies
-# - commands:
-#   - echo $${SAMPLE_KEY}
-#   environment:
-#     SAMPLE_KEY:
-#       from_secret: FOO
-#   image: alpine
-#   name: Run Linting
-# - commands:
-#   - echo $${SAMPLE_KEY}
-#   environment:
-#     SAMPLE_KEY:
-#       from_secret: FOO
-#   image: alpine
-#   name: Run Unit Tests
-# trigger:
-#   branch:
-#     exclude:
-#     - main
-#   event:
-#   - push
-# type: kubernetes
