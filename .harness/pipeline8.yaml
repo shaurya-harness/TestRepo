@@ -6,6 +6,8 @@ pipeline:
   clone:
     disabled: true
   stages:
-    - steps:
+    - id: pipe-8
+      delegates: myRunner-Shobhit
+      steps:
         - run:
             script: echo "hello from branch pipeline-8.Sync."
