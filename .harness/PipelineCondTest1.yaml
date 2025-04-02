@@ -5,7 +5,7 @@ pipeline:
         - main
     pull_request:
       branches:
-        - PipelineCondTesting1
+        - PipelineConditionsTesting1
   clone:
     disabled: true
   stages:
