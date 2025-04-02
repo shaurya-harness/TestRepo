@@ -2,10 +2,10 @@ pipeline:
   "on":
     push:
       branches:
-        - PipelineCondTesting1
+        - PipelineConditionsTesting1
     pull_request:
       branches:
-        - PipelineCondTesting1
+        - PipelineConditionsTesting1
   clone:
     disabled: true
   stages:
