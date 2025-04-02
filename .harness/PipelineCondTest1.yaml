@@ -1,0 +1,14 @@
+pipeline:
+  "on":
+    push:
+      branches:
+        - main
+    pull_request:
+      branches:
+        - PipelineCondTesting1
+  clone:
+    disabled: true
+  stages:
+    - steps:
+        - run:
+            script: echo "HelloWorld"
