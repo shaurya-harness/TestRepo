@@ -1,0 +1,28 @@
+template:
+  id: testTemplate
+  name: testTemplate
+  version: 1
+  description: This is test template V1. Period
+  tags:
+    hi: ""
+    ok: ""
+    cool: ""
+  inputs:
+    connector:
+      type: connector
+    cacheKey:
+      type: string
+    failIfKeyNotFound:
+      type: string
+    bucket:
+      type: string
+    archiveFormat:
+      type: string
+  step:
+    group:
+      steps:
+        - run:
+            container:
+              image: alpine
+            script: |-
+              echo "hello world"
