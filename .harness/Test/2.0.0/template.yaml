@@ -2,7 +2,7 @@ template:
   id: testTemplate
   name: testTemplate
   version: 1
-  description: This is test template V1. Period Hii
+  description: This is test template V1. Period Hii, how are you
   tags:
     hi: ""
     ok: ""
