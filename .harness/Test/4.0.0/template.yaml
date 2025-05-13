@@ -2,15 +2,17 @@ template:
   id: testTemplate
   name: testTemplate
   version: 1
-  description: This is test template V1. Cool. Extraa
+  description: This is test template V1. Cool. New Template
   author: harness
   module:
     - ci
     - cd
+    - idp
   tags:
     hi: ""
     ok: ""
     cool: ""
+    name: ""
   inputs:
     connector:
       type: connector
