@@ -1,35 +1,35 @@
 template:
-id: testTemplate
-name: testTemplate
-version: 1
-description: This is test template V1. Cool. New Template 6.0.2
-author: harness
-module:
-  - ci
-  - cd
-  - idp
-  - ccm
-tags:
-  hi: ""
-  ok: ""
-  cool: ""
-  name: ""
-inputs:
-  connector:
-    type: connector
-  cacheKey:
-    type: string
-  failIfKeyNotFound:
-    type: string
-  bucket:
-    type: string
-  archiveFormat:
-    type: string
-step:
-  group:
-    steps:
-      - run:
-          container:
-            image: alpine
-          script: |-
-            echo "hello world"
+  id: testTemplate
+  name: testTemplate
+  version: 1
+  description: This is test template V1. Cool. New Template 6.0.2
+  author: harness
+  module:
+    - ci
+    - cd
+    - idp
+    - ccm
+  tags:
+    hi: ""
+    ok: ""
+    cool: ""
+    name: ""
+  inputs:
+    connector:
+      type: connector
+    cacheKey:
+      type: string
+    failIfKeyNotFound:
+      type: string
+    bucket:
+      type: string
+    archiveFormat:
+      type: string
+  step:
+    group:
+      steps:
+        - run:
+            container:
+              image: alpine
+            script: |-
+              echo "hello world"
